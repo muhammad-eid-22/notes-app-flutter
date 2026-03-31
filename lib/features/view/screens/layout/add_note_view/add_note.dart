@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:jotty_note_app/features/models/note_model.dart';
 import 'package:jotty_note_app/features/view/screens/layout/add_note_view/widget/card_note_category.dart';
 
 import '../../../../../core/extensions/context_extensions.dart';
@@ -43,6 +45,12 @@ class _AddNoteState extends State<AddNote> {
                 text: "Enter Note Title",
                 padding: EdgeInsets.only(left: context.wd(16)),
                 controller: _titleController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Title is required";
+                  }
+                  return null;
+                },
               ),
               SizedBox(height: context.hg(24)),
               // Content Section
@@ -54,6 +62,12 @@ class _AddNoteState extends State<AddNote> {
                   controller: _contentController,
                   expands: true,
                   maxLines: null,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Content is required";
+                    }
+                    return null;
+                  },
                   isPassword: false,
                   textAlignVertical: TextAlignVertical.top,
                   padding: EdgeInsets.only(
@@ -68,7 +82,14 @@ class _AddNoteState extends State<AddNote> {
                 children: [
                   Expanded(
                     flex: 5,
-                    child: CustomElevatedButton(onPressed: () {}, text: "Save"),
+                    child: CustomElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          addNote();
+                        }
+                      },
+                      text: "Save",
+                    ),
                   ),
                   Expanded(
                     child: CustomIconBotton(
@@ -88,5 +109,16 @@ class _AddNoteState extends State<AddNote> {
         ),
       ),
     );
+  }
+
+  void addNote() {
+    final note = NoteModel(
+      title: _titleController.text,
+      content: _contentController.text,
+    );
+    var noteBox = Hive.box<NoteModel>("Notes");
+    noteBox.add(note);
+    // TODO: Save Note
+    Navigator.pop(context, note);
   }
 }

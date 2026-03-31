@@ -9,6 +9,7 @@ class EmptyNotes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Assets.lottie.emptyNotes.lottie(
           width: context.wd(200),

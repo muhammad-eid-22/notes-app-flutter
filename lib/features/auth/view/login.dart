@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
               ),
               SizedBox(height: context.hg(16)),
               Text(
-                "And notes your idea",
+                "And Notes your idea",
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: AppColors.darkGrey,
                   fontWeight: FontWeight.w400,

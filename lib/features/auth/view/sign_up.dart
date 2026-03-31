@@ -38,7 +38,7 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: context.hg(16)),
               Text(
-                "And start taking notes",
+                "And start taking models",
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: AppColors.darkGrey,
                   fontWeight: FontWeight.w400,

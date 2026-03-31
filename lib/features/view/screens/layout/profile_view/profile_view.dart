@@ -77,7 +77,6 @@ class ProfileView extends StatelessWidget {
               borderColor: AppColors.primary,
               onPressed: () {},
             ),
-            Divider(),
             // Options
             Text(
               "App Settings",
@@ -155,7 +154,7 @@ class ProfileView extends StatelessWidget {
                 ),
               ],
             ),
-            Divider(),
+            SizedBox(height: context.hg(16)),
             Row(
               spacing: context.wd(16),
               children: [
