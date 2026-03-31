@@ -6,7 +6,14 @@ import '../../../../../../core/theme_manager/app_colors.dart';
 import '../../../../widget/custom_icon_botton.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  final bool isGrid;
+  final VoidCallback onToggleView;
+
+  const CustomAppBar({
+    super.key,
+    required this.isGrid,
+    required this.onToggleView,
+  });
 
   @override
   Widget build(BuildContext context) {

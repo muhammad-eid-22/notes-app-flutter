@@ -1,16 +1,38 @@
-# jotty_note_app
+# 📝 Notes App
 
-A new Flutter project.
+A clean and modern Notes App built with Flutter.
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- 🗂️ Create, edit, delete notes
+- 🌙 Dark Mode
+- 🌍 Multi-language (AR / EN)
+- ⭐ Favorite notes
+- 🔍 Search functionality
+- 🔐 Firebase Authentication
+- ☁️ Cloud Firestore Sync
 
-A few resources to get you started if this is your first Flutter project:
+## 📸 Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Home](assets/screenshots/home.png)
+![Favorite](assets/screenshots/favorite.png)
+![Add Note](assets/screenshots/add_note.png)
+![Profile](assets/screenshots/profile.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Tech Stack
+
+- Flutter
+- Provider (State Management)
+- Hive (Local Storage)
+- Firebase Auth
+- Cloud Firestore
+
+## 📂 Project Structure
+
+## 🎥 Demo
+
+(Add video link here)
+
+## 👨‍💻 Author
+
+Mohamed Eid

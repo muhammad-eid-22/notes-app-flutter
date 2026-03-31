@@ -27,7 +27,7 @@ class FavoriteView extends StatelessWidget {
             ),
             Text(
               textAlign: TextAlign.center,
-              "Save the notes you\n love and find them quickly anytime.",
+              "Save the models you\n love and find them quickly anytime.",
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ],

@@ -17,6 +17,7 @@ class LayoutView extends StatefulWidget {
 }
 
 class _LayoutViewState extends State<LayoutView> {
+  final GlobalKey<HomeViewState> homeKey = GlobalKey();
   int currentIndex = 0;
 
   @override
@@ -32,17 +33,23 @@ class _LayoutViewState extends State<LayoutView> {
       BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
     ];
     List<Widget> pages = [
-      const HomeView(),
+      HomeView(key: homeKey),
       const FavoriteView(),
       const SearchTap(),
       const ProfileView(),
     ];
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, PageRouteName.addNote);
+        onPressed: () async {
+          final note = await Navigator.pushNamed(
+            context,
+            PageRouteName.addNote,
+          );
+          if (note != null) {
+            homeKey.currentState?.addNote(note);
+          }
         },
-        child: const Icon(Icons.add, color: Colors.white),
+        child: const Icon(Icons.add, color: AppColors.white),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 

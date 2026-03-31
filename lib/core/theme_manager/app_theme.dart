@@ -66,7 +66,7 @@ class AppTheme {
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: AppColors.primary,
-      iconSize: 24,
+      iconSize: 30,
       elevation: 6,
       shape: CircleBorder(),
     ),
